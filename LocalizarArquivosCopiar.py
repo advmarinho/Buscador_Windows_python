@@ -18,7 +18,7 @@ print('\n')
 
 again2 = 's'
 while(again2 == 's'):
-    termo1 = str(input(' Digite o termo a ser buscado no nome do arquivo, exemplos: FOL/AUT ou a extensão .pdf/.xls:-->|')).lower()
+    termo1 = str(input(' Digite o termo a ser buscado no nome do arquivo, exemplos: FOL/AUT ou a extensão .pdf/.xls:-->|'))
     print('\n')
     again   = 1 #input(r' Digite a quantidade de vezes que irá repetir a busca, mínimo uma vez "1" :-->|')
     print('\n')
@@ -31,8 +31,11 @@ while(again2 == 's'):
             for arquivo in arquivos:
                 if termo1 in arquivo:
                     caminho_completo = os.path.join(raiz, arquivo)
+                    caminhoRaiz = os.path.join(raiz)
                     nome_arquivo, ext_arquivo = os.path.splitext(arquivo)
-                    print(nome_arquivo, ext_arquivo, sep='')
+                    print('Patas: ', caminhoRaiz)
+                    print('__Arq: ','\t', nome_arquivo, ext_arquivo, sep='')
+                    
         seguir = input('\nTecle "S" para COPIAR os arquivos encontrados na pasta indicada ou "N" para sair (S/N): ').lower()
         seguir = seguir.lower()
         if seguir == 's':
@@ -59,5 +62,3 @@ while(again2 == 's'):
                     pass
     again2 = input("Deseja Repetir a busca? (S/N): ").lower()
 print('\nFim da execução!')
-    
-
